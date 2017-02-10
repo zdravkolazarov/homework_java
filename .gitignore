@@ -1,12 +1,60 @@
-*.class
+package com.company;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+import java.text.DateFormat;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
 
-# Package Files #
-*.jar
-*.war
-*.ear
+public class Main {
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+    public static void main(String[] args) {
+	// problem 6
+        String name = "Pesho";
+        int age = 28;
+        double height = 1.84;
+
+        //problem 7
+        System.out.println("My name is " + name);
+
+        //problem 8
+        int x = 1736436;
+        int y = 48923416;
+
+        int result = x + y;
+        System.out.println("The resul is " + result);
+
+        //problem 9
+        //print on the console the current date
+        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yy HH:mm:ss");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));Calendar cal = Calendar.getInstance();
+
+        //print on the console the date after 20 hours
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR, 20);
+        System.out.println("After 20 Hours will be: " + dateFormat.format(cal.getTime()) );
+
+        //print on the console the product of two "double" variables declared by you
+        double varOne = 1.5;
+        double varTwo = 2.8;
+        System.out.println(MessageFormat.format("The product of {0} and {1} is {2}", varOne, varTwo, varOne * varTwo));
+
+        //Read from the console two numbers. Print on the console their product (e.g. Read “4” and “20”, Print “80”)
+        Scanner in = new Scanner(System.in);
+        int input = in.nextInt();
+        System.out.println("Sum is " + (input + 10));
+        int firstNumber = in.nextInt();
+        int secondNumber = in.nextInt();
+        int secondResult = firstNumber * secondNumber;
+        System.out.println(MessageFormat.format(("The product of {0} and {1} is {2}"), firstNumber, secondNumber, secondResult));
+
+        //Print on the console the number from 1 to 1000
+        for (int i = 1; i<=1000; i++){
+            System.out.println(i);
+        }
+
+
+    }
+}
